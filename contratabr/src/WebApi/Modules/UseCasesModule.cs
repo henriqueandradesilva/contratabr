@@ -24,6 +24,7 @@ public static class UseCasesModule
         services.AddScoped<IGetListAllRouteUseCase, GetListAllRouteUseCase>();
         services.AddScoped<IGetListSearchRouteUseCase, GetListSearchRouteUseCase>();
         services.AddScoped<IGetRouteByIdUseCase, GetRouteByIdUseCase>();
+        services.AddScoped<IGetBestRouteByOriginAndDestinyUseCase, GetBestRouteByOriginAndDestinyUseCase>();
         services.AddScoped<IPostRouteUseCase, PostRouteUseCase>();
         services.Decorate<IPostRouteUseCase, PostRouteValidationUseCase>();
         services.AddScoped<IPutRouteUseCase, PutRouteUseCase>();
