@@ -117,7 +117,7 @@ Clique com o botão direito no projeto WebApi no Gerenciador de Soluções e sel
 3. **Execute a aplicação:** 
 Pressione F5 ou clique em "Iniciar" para executar a aplicação.
 4. **Acesse a documentação Swagger:**
-Abra o navegador e acesse: https://localhost:600100/swagger/index.html.
+Abra o navegador e acesse: https://localhost:61888/swagger/index.html.
 
 ### **Consultar a Melhor Rota**
 **GET** `/api/v1/rotas/melhor/origem/{origem}/destino/{destino}`
@@ -213,11 +213,11 @@ Adiciona uma nova rota com origem, destino e valor.
 ---
 
 # Rota de Viagem #
-Escolha a rota de viagem mais barata independente da quantidade de conexões. (OK)
-Para isso precisamos inserir as rotas através de um arquivo de entrada. (OK)
+Escolha a rota de viagem mais barata independente da quantidade de conexões. ✅
+Para isso precisamos inserir as rotas através de um arquivo de entrada. ✅
 
 ## Arquivo de entrada ##
-Formato: Origem,Destino,Valor (OK)
+Formato: Origem,Destino,Valor ✅
 
 ```rotas.csv
 GRU,BRC,10
@@ -237,11 +237,11 @@ Uma viajem de **GRU** para **CDG** existem as seguintes rotas:
 3. GRU - CDG ao custo de $75
 4. GRU - SCL - ORL - CDG ao custo de $45
 
-- O melhor preço é da rota **1**, apesar de mais conexões, seu valor final é menor. (OK)
-- O resultado da consulta no programa deve ser: **GRU - BRC - SCL - ORL - CDG ao custo de $40**. (OK)
+- O melhor preço é da rota **1**, apesar de mais conexões, seu valor final é menor. ✅
+- O resultado da consulta no programa deve ser: **GRU - BRC - SCL - ORL - CDG ao custo de $40**. ✅
 
 ### Execução do programa ###
-A inicializacao do teste se dará por linha de comando onde o primeiro argumento é o arquivo de entrada. (OK)
+A inicializacao do teste se dará por linha de comando onde o primeiro argumento é o arquivo de entrada. ✅
 
 ``` cmd
 $ executavel rotas.csv
@@ -251,7 +251,7 @@ $ executavel rotas.csv
 Duas interfaces de consulta devem ser implementadas:
 
 - Interface de console 
-	O console deverá receber um input com a rota no formato "DE-PARA" e imprimir a melhor rota e valor. (OK)
+	O console deverá receber um input com a rota no formato "DE-PARA" e imprimir a melhor rota e valor. ✅
   
   Exemplo:
   ```cmd
@@ -263,15 +263,15 @@ Duas interfaces de consulta devem ser implementadas:
 
 - Interface Rest
     A interface Rest deverá suportar 2 endpoints:
-    - Registro de novas rotas. Essas novas rotas devem ser persistidas no arquivo csv utilizado como entrada(rotas.csv), (OK)
-    - Consulta de melhor rota entre dois pontos. (OK)
+    - Registro de novas rotas. Essas novas rotas devem ser persistidas no arquivo csv utilizado como entrada(rotas.csv), ✅
+    - Consulta de melhor rota entre dois pontos. ✅
 
 ## Entregáveis ##
-* Envie apenas o código fonte (OK)
-* Estruture sua aplicação seguindo as boas práticas de desenvolvimento (OK)
-* Evite o uso de frameworks ou bibliotecas externas à linguagem (OK)
-* Implemente testes unitários seguindo as boas práticas de mercado (OK)
-* Em um arquivo Texto ou Markdown descreva: (OK)
+* Envie apenas o código fonte ✅
+* Estruture sua aplicação seguindo as boas práticas de desenvolvimento ✅
+* Evite o uso de frameworks ou bibliotecas externas à linguagem ✅
+* Implemente testes unitários seguindo as boas práticas de mercado ✅
+* Em um arquivo Texto ou Markdown descreva: ✅
   * Como executar a aplicação
   * Estrutura dos arquivos/pacotes
   * Explique as decisões de design adotadas para a solução
