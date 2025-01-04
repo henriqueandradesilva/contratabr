@@ -6,7 +6,7 @@ namespace Infrastructure.DataAccess.Repositories;
 public class RouteRepository : Repository<Route>, IRouteRepository
 {
     public RouteRepository(
-        ContrataBRDbContext context) : base(context)
+        RouteDbContext context) : base(context)
     {
     }
 }

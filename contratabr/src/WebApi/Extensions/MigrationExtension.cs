@@ -12,7 +12,7 @@ public static class MigrationExtension
     {
         using IServiceScope scope = app.ApplicationServices.CreateScope();
 
-        var context = scope.ServiceProvider.GetRequiredService<Infrastructure.DataAccess.ContrataBRDbContext>();
+        var context = scope.ServiceProvider.GetRequiredService<Infrastructure.DataAccess.RouteDbContext>();
 
         var connection =
             context.Database.GetConnectionString();

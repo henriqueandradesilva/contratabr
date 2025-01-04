@@ -10,12 +10,12 @@ namespace Infrastructure.DataAccess;
 
 public sealed class UnitOfWork : IUnitOfWork, IDisposable
 {
-    private readonly ContrataBRDbContext _context;
+    private readonly RouteDbContext _context;
 
     private bool _disposed;
 
     public UnitOfWork(
-        ContrataBRDbContext context) => _context = context;
+        RouteDbContext context) => _context = context;
 
     public void Dispose() => Dispose(true);
 

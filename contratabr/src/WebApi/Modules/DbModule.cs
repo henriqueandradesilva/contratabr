@@ -11,9 +11,9 @@ using Serilog.Extensions.Logging;
 
 namespace WebApi.Modules;
 
-public static class PostgreSqlModule
+public static class DbModule
 {
-    public static IServiceCollection AddPostgreSql(
+    public static IServiceCollection AddDbModule(
         this IServiceCollection services,
         IConfiguration configuration,
         string connection)
@@ -35,7 +35,7 @@ public static class PostgreSqlModule
             var connectionString = string.IsNullOrEmpty(connection) ?
                 configuration.GetConnectionString("DefaultConnection") : connection;
 
-            services.AddDbContext<ContrataBRDbContext>(options =>
+            services.AddDbContext<RouteDbContext>(options =>
             {
                 options.UseNpgsql(connectionString);
                 options.UseLoggerFactory(serilogLoggerFactory);
@@ -43,6 +43,16 @@ public static class PostgreSqlModule
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IRouteRepository, RouteRepository>();
+        }
+        else
+        {
+            services.AddScoped<RouteFakeDbContext>(provider =>
+            {
+                var csvFilePath = "rotas.csv";
+                return new RouteFakeDbContext(csvFilePath);
+            });
+
+            services.AddScoped<IRouteRepository, RouteFakeRepository>();
         }
 
         return services;

@@ -27,11 +27,11 @@ public class PostRouteUseCaseTests
             valor: 10.00
         );
 
-        var options = new DbContextOptionsBuilder<ContrataBRDbContext>()
+        var options = new DbContextOptionsBuilder<RouteDbContext>()
             .UseInMemoryDatabase($"TestDatabase_{Guid.NewGuid()}")
             .Options;
 
-        var dbContext = new ContrataBRDbContext(options);
+        var dbContext = new RouteDbContext(options);
 
         await SeedMockData.Init(dbContext, true);
 
@@ -73,11 +73,11 @@ public class PostRouteUseCaseTests
             valor: 10.00
         );
 
-        var options = new DbContextOptionsBuilder<ContrataBRDbContext>()
+        var options = new DbContextOptionsBuilder<RouteDbContext>()
             .UseInMemoryDatabase($"TestDatabase_{Guid.NewGuid()}")
             .Options;
 
-        var dbContext = new ContrataBRDbContext(options);
+        var dbContext = new RouteDbContext(options);
 
         await SeedMockData.Init(dbContext, true);
 

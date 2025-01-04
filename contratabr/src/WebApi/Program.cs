@@ -18,7 +18,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHttpClient();
 builder.Services.AddFeatureFlags(builder.Configuration);
 builder.Services.AddHealthChecks(builder.Configuration);
-builder.Services.AddPostgreSql(builder.Configuration, null);
+builder.Services.AddDbModule(builder.Configuration, null);
 builder.Services.AddControllers(o =>
 {
     o.Conventions.Add(new ControllerDocumentationConventation());

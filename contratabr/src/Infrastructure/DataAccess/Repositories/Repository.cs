@@ -15,10 +15,10 @@ public abstract class Repository<T> : IRepository<T> where T : BaseEntity
 {
     public DbSet<T> Entity { get; private set; }
 
-    private ContrataBRDbContext _context;
+    private RouteDbContext _context;
 
     public Repository(
-        ContrataBRDbContext context)
+        RouteDbContext context)
     {
         Entity = context.Set<T>();
         _context = context;

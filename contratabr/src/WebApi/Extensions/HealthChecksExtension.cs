@@ -35,7 +35,7 @@ public static class HealthChecksExtension
             .GetResult();
 
         if (isEnabled)
-            healthChecks.AddDbContextCheck<ContrataBRDbContext>("ContrataBRDbContext");
+            healthChecks.AddDbContextCheck<RouteDbContext>("ContrataBRDbContext");
 
         return services;
     }

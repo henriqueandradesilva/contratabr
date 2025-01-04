@@ -12,7 +12,6 @@ namespace Application.UseCases.V1.Route.GetRouteById;
 
 public class GetBestRouteByOriginAndDestinyUseCase : IGetBestRouteByOriginAndDestinyUseCase
 {
-    private const string _caminhoArquivo = "rotas.csv";
     private IOutputPortWithNotFound<string> _outputPort;
     private readonly IRouteRepository _repository;
     private readonly NotificationHelper _notificationHelper;

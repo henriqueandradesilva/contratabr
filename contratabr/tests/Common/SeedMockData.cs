@@ -6,7 +6,7 @@ namespace tests.Common;
 public static class SeedMockData
 {
     public static async Task Init(
-        ContrataBRDbContext dbContext,
+        RouteDbContext dbContext,
         bool initRoute)
     {
         if (initRoute)

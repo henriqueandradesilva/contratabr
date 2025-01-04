@@ -22,11 +22,11 @@ public class DeleteRouteUseCaseTests
         // Arrange
         var routeIdSuccess = 3;
 
-        var options = new DbContextOptionsBuilder<ContrataBRDbContext>()
+        var options = new DbContextOptionsBuilder<RouteDbContext>()
             .UseInMemoryDatabase($"TestDatabase_{Guid.NewGuid()}")
             .Options;
 
-        var dbContext = new ContrataBRDbContext(options);
+        var dbContext = new RouteDbContext(options);
 
         await SeedMockData.Init(dbContext, true);
 
@@ -69,11 +69,11 @@ public class DeleteRouteUseCaseTests
         var routeIdNotFound = 999L;
 
         // Arrange
-        var options = new DbContextOptionsBuilder<ContrataBRDbContext>()
+        var options = new DbContextOptionsBuilder<RouteDbContext>()
             .UseInMemoryDatabase($"TestDatabase_{Guid.NewGuid()}")
             .Options;
 
-        var dbContext = new ContrataBRDbContext(options);
+        var dbContext = new RouteDbContext(options);
 
         await SeedMockData.Init(dbContext, true);
 

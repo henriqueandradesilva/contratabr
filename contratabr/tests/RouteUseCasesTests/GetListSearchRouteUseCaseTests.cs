@@ -22,11 +22,11 @@ public class GetListSearchRouteUseCaseTests
     public async Task Execute_Should_Return_Filtered_Routes_By_Origin_And_Destiny_And_Pagination()
     {
         // Arrange
-        var options = new DbContextOptionsBuilder<ContrataBRDbContext>()
+        var options = new DbContextOptionsBuilder<RouteDbContext>()
             .UseInMemoryDatabase($"TestDatabase_{Guid.NewGuid()}")
             .Options;
 
-        using var dbContext = new ContrataBRDbContext(options);
+        using var dbContext = new RouteDbContext(options);
 
         await SeedMockData.Init(dbContext, true);
 

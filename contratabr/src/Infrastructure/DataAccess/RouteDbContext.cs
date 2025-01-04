@@ -4,9 +4,9 @@ using System;
 
 namespace Infrastructure.DataAccess;
 
-public sealed class ContrataBRDbContext : DbContext
+public sealed class RouteDbContext : DbContext
 {
-    public ContrataBRDbContext(
+    public RouteDbContext(
         DbContextOptions options)
         : base(options)
     {
@@ -18,7 +18,7 @@ public sealed class ContrataBRDbContext : DbContext
         if (modelBuilder is null)
             throw new ArgumentNullException(nameof(modelBuilder));
 
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(ContrataBRDbContext).Assembly);
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(RouteDbContext).Assembly);
 
         SeedData.Seed(modelBuilder);
 
