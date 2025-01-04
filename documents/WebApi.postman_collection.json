@@ -56,7 +56,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:60100/api/v1/rotas/melhor/GRU/CDG",
+							"raw": "https://localhost:60100/api/v1/rotas/melhor/origem/GRU/destino/CDG",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -67,7 +67,9 @@
 								"v1",
 								"rotas",
 								"melhor",
+								"origem",
 								"GRU",
+								"destino",
 								"CDG"
 							]
 						}
