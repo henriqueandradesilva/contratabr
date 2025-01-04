@@ -1,9 +1,9 @@
 # Rota de Viagem #
-Escolha a rota de viagem mais barata independente da quantidade de conexões.
-Para isso precisamos inserir as rotas através de um arquivo de entrada.
+Escolha a rota de viagem mais barata independente da quantidade de conexões. (OK)
+Para isso precisamos inserir as rotas através de um arquivo de entrada. (OK)
 
 ## Arquivo de entrada ##
-Formato:
+Formato: (OK)
 Origem,Destino,Valor
 
 ```rotas.csv
@@ -24,21 +24,21 @@ Uma viajem de **GRU** para **CDG** existem as seguintes rotas:
 3. GRU - CDG ao custo de $75
 4. GRU - SCL - ORL - CDG ao custo de $45
 
-O melhor preço é da rota **1**, apesar de mais conexões, seu valor final é menor.
-O resultado da consulta no programa deve ser: **GRU - BRC - SCL - ORL - CDG ao custo de $40**.
+O melhor preço é da rota **1**, apesar de mais conexões, seu valor final é menor. (OK)
+O resultado da consulta no programa deve ser: **GRU - BRC - SCL - ORL - CDG ao custo de $40**. (OK)
 
 ### Execução do programa ###
-A inicializacao do teste se dará por linha de comando onde o primeiro argumento é o arquivo de entrada.
+A inicializacao do teste se dará por linha de comando onde o primeiro argumento é o arquivo de entrada. (OK)
 
 ```cmd
 $ executavel rotas.csv
 ```
 
 ### Projetos ###
-Duas interfaces de consulta devem ser implementadas:
+Duas interfaces de consulta devem ser implementadas: (OK)
 
 - Interface de console 
-	O console deverá receber um input com a rota no formato "DE-PARA" e imprimir a melhor rota e valor.
+	O console deverá receber um input com a rota no formato "DE-PARA" e imprimir a melhor rota e valor. (OK)
   
   Exemplo:
   ```cmd
@@ -58,7 +58,7 @@ Duas interfaces de consulta devem ser implementadas:
 * Estruture sua aplicação seguindo as boas práticas de desenvolvimento (OK)
 * Evite o uso de frameworks ou bibliotecas externas à linguagem (OK)
 * Implemente testes unitários seguindo as boas práticas de mercado (OK)
-* Em um arquivo Texto ou Markdown descreva:
+* Em um arquivo Texto ou Markdown descreva: (OK)
   * Como executar a aplicação
   * Estrutura dos arquivos/pacotes
   * Explique as decisões de design adotadas para a solução
