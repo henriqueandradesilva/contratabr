@@ -2,7 +2,6 @@ using Application.UseCases.V1.Route.GetRouteById.Interfaces;
 using CrossCutting.Common.Dtos.Response;
 using CrossCutting.Const;
 using CrossCutting.Conventations;
-using CrossCutting.Dtos.Route.Response;
 using CrossCutting.Enums;
 using CrossCutting.Extensions.Api;
 using CrossCutting.Helpers;
@@ -35,9 +34,9 @@ public class GetBestRouteByOriginAndDestinyController : CustomControllerBaseExte
 
     [HttpGet("melhor/origem/{origem}/destino/{destino}")]
     [AllowAnonymous]
-    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GenericResponse<GetRouteResponse>))]
-    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(GenericResponse<GetRouteResponse>))]
-    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(GenericResponse<GetRouteResponse>))]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GenericResponse<string>))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(GenericResponse<string>))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(GenericResponse<string>))]
     [ApiConventionMethod(typeof(CustomApiConvention), nameof(CustomApiConvention.Get))]
     [SwaggerOperation(Summary = "Consultar a melhor rota por origem e destino")]
     public async Task<IActionResult> GetRoute(

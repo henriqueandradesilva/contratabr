@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "contratabr", "contratabr", "{51331007-CACA-4676-934B-217999A6B1E2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "routes", "routes", "{51331007-CACA-4676-934B-217999A6B1E2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F4408BAF-2D26-4D97-808C-7A96C4A7F636}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "contratabr\src\Application\Application.csproj", "{80E73E2B-3507-4160-BF51-5B1BD3F94E4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "route\src\Application\Application.csproj", "{80E73E2B-3507-4160-BF51-5B1BD3F94E4B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "contratabr\src\Infrastructure\Infrastructure.csproj", "{C38A01E0-F1C3-40C5-A8A8-5B3ECD5F59AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "route\src\Infrastructure\Infrastructure.csproj", "{C38A01E0-F1C3-40C5-A8A8-5B3ECD5F59AB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "contratabr\src\Domain\Domain.csproj", "{0925FCA6-083A-4478-80F3-2391987AAF2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "route\src\Domain\Domain.csproj", "{0925FCA6-083A-4478-80F3-2391987AAF2C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "contratabr\src\WebApi\WebApi.csproj", "{DDAE48BB-9BC2-41B5-BD5C-3E0EAB85DA37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "route\src\WebApi\WebApi.csproj", "{DDAE48BB-9BC2-41B5-BD5C-3E0EAB85DA37}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Core", "1 - Core", "{A95C1421-B90A-47A4-AE15-645D4AB5870D}"
 EndProject
@@ -21,13 +21,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Api", "2 - Api", "{D716
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{22F6F3A6-7A54-459B-9D68-09EE13206C93}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrossCutting", "contratabr\src\CrossCutting\CrossCutting.csproj", "{848ECD7E-CE0D-4457-9D48-A0BE08687D23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrossCutting", "route\src\CrossCutting\CrossCutting.csproj", "{848ECD7E-CE0D-4457-9D48-A0BE08687D23}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tests", "contratabr\tests\tests.csproj", "{BAB8B0E4-665E-4127-A57D-B7C0EF1353A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tests", "route\tests\tests.csproj", "{BAB8B0E4-665E-4127-A57D-B7C0EF1353A3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Console", "3 - Console", "{3DF3B7F7-EDFB-4692-897A-322F859BF4EC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Routes", "contratabr\src\Routes\Routes.csproj", "{6BB173BB-27AE-48D9-BC07-6CF1091FCA12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Routes", "route\src\Routes\Routes.csproj", "{6BB173BB-27AE-48D9-BC07-6CF1091FCA12}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

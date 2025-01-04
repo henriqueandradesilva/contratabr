@@ -26,7 +26,7 @@ services:
      - "60100:80"
     build:
       context: .
-      dockerfile: contratabr/src/WebApi/Dockerfile
+      dockerfile: route/src/WebApi/Dockerfile
 
 volumes:
   postgres_data:
