@@ -33,7 +33,7 @@ public class GetBestRouteByOriginAndDestinyController : CustomControllerBaseExte
         _notificationHelper = notificationHelper;
     }
 
-    [HttpGet("melhor/{origem}/{destino}")]
+    [HttpGet("melhor/origem/{origem}/destino/{destino}")]
     [AllowAnonymous]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GenericResponse<GetRouteResponse>))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(GenericResponse<GetRouteResponse>))]
