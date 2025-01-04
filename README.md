@@ -50,15 +50,18 @@ Aqui está uma visão geral da arquitetura do sistema.
 
 ![Padrão de Arquitetura](./documents/arquitetura.png)
 
+##  Clone o repositório:
+git clone https://github.com/henriqueandradesilva/contratabr.git
+
 ### Passos para Build e Execução Console pelo CMD ###
 1. Execute o CMD e Navegue para o Diretório do Projeto
 
 - Certifique-se de estar no diretório do projeto onde está o arquivo Routes.csproj. 
-Por exemplo, suponha que o projeto esteja em D:\contratabr\src\Routes.
+Por exemplo, suponha que o projeto esteja em D:\routes\contratabr\src\Routes.
 
 ```
 -- cmd
-cd D:\contratabr\src\Routes
+cd D:\contratabr\route\src\Routes
 ```
 
 2. Build do Executável
@@ -72,7 +75,7 @@ dotnet build -c Release
 - Isso gerará o executável no diretório:
 
 ```
-D:\contratabr\src\Routes\bin\Release\net8.0\routes.exe
+D:\contratabr\route\src\Routes\bin\Release\net8.0\routes.exe
 ```
 
 3. Executar o Programa
@@ -80,7 +83,7 @@ D:\contratabr\src\Routes\bin\Release\net8.0\routes.exe
 
 ```
 -- cmd
-cd D:\contratabr\src\Routes\bin\Release\net8.0\
+cd D:\contratabr\route\src\Routes\bin\Release\net8.0\
 ```
 
 - E execute o programa passando o arquivo como argumento:
