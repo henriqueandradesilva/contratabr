@@ -29,9 +29,9 @@ public class GetBestRouteByOriginAndDestinyUseCase : IGetBestRouteByOriginAndDes
         string destiny)
     {
         var result =
-            await ConsultarMelhorRota(origin, destiny);
+            await GetBestRoute(origin, destiny);
 
-        if (result == null)
+        if (result == MessageConst.RouteNotExist)
         {
             _notificationHelper.Add(SystemConst.NotFound, MessageConst.RouteNotExist);
 
@@ -41,53 +41,53 @@ public class GetBestRouteByOriginAndDestinyUseCase : IGetBestRouteByOriginAndDes
             _outputPort.Ok(result);
     }
 
-    public async Task<string> ConsultarMelhorRota(string origem, string destino)
+    public async Task<string> GetBestRoute(string origin, string destiny)
     {
-        var rotas =
+        var routes =
             await _repository.GetAll();
 
-        var melhorRota = EncontrarMelhorRota(rotas, origem, destino);
+        var bestRoute = FindBestRoute(routes, origin, destiny);
 
-        return melhorRota?.Caminho == null
-            ? "Rota não encontrada."
-            : string.Join(" - ", melhorRota?.Caminho) + $" ao custo de ${melhorRota?.Custo}";
+        return bestRoute?.Caminho == null
+            ? MessageConst.RouteNotExist
+            : string.Join(" - ", bestRoute?.Caminho) + $" ao custo de ${bestRoute?.Valor}";
     }
 
-    private (List<string> Caminho, double Custo)? EncontrarMelhorRota(
-        List<Domain.Entities.Route> rotas,
-        string origem,
-        string destino)
+    private (List<string> Caminho, double Valor)? FindBestRoute(
+        List<Domain.Entities.Route> routes,
+        string origin,
+        string destiny)
     {
-        var visitados = new HashSet<string>();
-        var melhorCaminho = new List<string>();
-        var menorCusto = double.MaxValue;
+        var visited = new HashSet<string>();
+        var bestPath = new List<string>();
+        var lowestCost = double.MaxValue;
 
-        void Buscar(string atual, List<string> caminhoAtual, double custoAtual)
+        void Search(string current, List<string> currentPath, double currentCost)
         {
-            if (atual == destino)
+            if (current == destiny)
             {
-                if (custoAtual < menorCusto)
+                if (currentCost < lowestCost)
                 {
-                    menorCusto = custoAtual;
-                    melhorCaminho = new List<string>(caminhoAtual);
+                    lowestCost = currentCost;
+                    bestPath = new List<string>(currentPath);
                 }
                 return;
             }
 
-            foreach (var rota in rotas.Where(r => r.Origem == atual && !visitados.Contains(r.Destino)))
+            foreach (var route in routes.Where(r => r.Origem == current && !visited.Contains(r.Destino)))
             {
-                visitados.Add(rota.Destino);
-                caminhoAtual.Add(rota.Destino);
-                Buscar(rota.Destino, caminhoAtual, custoAtual + rota.Valor);
-                caminhoAtual.RemoveAt(caminhoAtual.Count - 1);
-                visitados.Remove(rota.Destino);
+                visited.Add(route.Destino);
+                currentPath.Add(route.Destino);
+                Search(route.Destino, currentPath, currentCost + route.Valor);
+                currentPath.RemoveAt(currentPath.Count - 1);
+                visited.Remove(route.Destino);
             }
         }
 
-        visitados.Add(origem);
-        Buscar(origem, new List<string> { origem }, 0);
+        visited.Add(origin);
+        Search(origin, new List<string> { origin }, 0);
 
-        return melhorCaminho.Count > 0 ? (melhorCaminho, menorCusto) : null;
+        return bestPath.Count > 0 ? (bestPath, lowestCost) : null;
     }
 
     public void SetOutputPort(

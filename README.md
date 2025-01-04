@@ -50,14 +50,14 @@ Duas interfaces de consulta devem ser implementadas:
 
 - Interface Rest
     A interface Rest deverá suportar 2 endpoints:
-    - Registro de novas rotas. Essas novas rotas devem ser persistidas no arquivo csv utilizado como entrada(rotas.csv),
-    - Consulta de melhor rota entre dois pontos.
+    - Registro de novas rotas. Essas novas rotas devem ser persistidas no arquivo csv utilizado como entrada(rotas.csv), (OK)
+    - Consulta de melhor rota entre dois pontos. (OK)
 
 ## Entregáveis ##
-* Envie apenas o código fonte
-* Estruture sua aplicação seguindo as boas práticas de desenvolvimento
-* Evite o uso de frameworks ou bibliotecas externas à linguagem
-* Implemente testes unitários seguindo as boas práticas de mercado
+* Envie apenas o código fonte (OK)
+* Estruture sua aplicação seguindo as boas práticas de desenvolvimento (OK)
+* Evite o uso de frameworks ou bibliotecas externas à linguagem (OK)
+* Implemente testes unitários seguindo as boas práticas de mercado (OK)
 * Em um arquivo Texto ou Markdown descreva:
   * Como executar a aplicação
   * Estrutura dos arquivos/pacotes

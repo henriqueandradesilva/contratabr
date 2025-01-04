@@ -1,4 +1,4 @@
-﻿using Application.UseCases.V1.Route.PostRoute;
+﻿using Application.UseCases.V1.Route.GetRouteById;
 using CrossCutting.Const;
 using CrossCutting.Helpers;
 using CrossCutting.Interfaces;
@@ -12,20 +12,12 @@ using tests.Common;
 
 namespace tests.RouteUseCasesTests;
 
-public class PostRouteUseCaseTests
+public class GetBestRouteByOriginAndDestinyUseCaseTests
 {
-    //Criação de rota
     [Fact]
-    public async Task Execute_Should_Return_Success_When_Route_Is_Created_Successfully()
+    public async Task Execute_Should_Return_Success_When_BestRoute_Is_Found()
     {
         // Arrange
-        var route = new Route(
-            id: 0,
-            origem: "TFK1",
-            destino: "TFK2",
-            valor: 10.00
-        );
-
         var options = new DbContextOptionsBuilder<RouteDbContext>()
             .UseInMemoryDatabase($"TestDatabase_{Guid.NewGuid()}")
             .Options;
@@ -39,38 +31,24 @@ public class PostRouteUseCaseTests
             .Setup(repo => repo.GetAll())
             .ReturnsAsync(dbContext.Set<Route>().ToList());
 
-        var mockUnitOfWork = new Mock<IUnitOfWork>();
         var mockNotificationHelper = new Mock<NotificationHelper>();
-        var mockOutputPort = new Mock<IOutputPort<Route>>();
+        var mockOutputPort = new Mock<IOutputPortWithNotFound<string>>();
 
-        var useCase = new PostRouteUseCase(
-            mockUnitOfWork.Object,
-            mockRouteRepository.Object,
-            mockNotificationHelper.Object
-        );
-
+        var useCase = new GetBestRouteByOriginAndDestinyUseCase(mockRouteRepository.Object, mockNotificationHelper.Object);
         useCase.SetOutputPort(mockOutputPort.Object);
 
         // Act
-        await useCase.Execute(route);
+        await useCase.Execute("GRU", "CDG");
 
         // Assert
+        mockOutputPort.Verify(op => op.Ok(It.IsAny<string>()), Times.Once);
         mockNotificationHelper.Verify(nh => nh.Add(It.IsAny<string>(), It.IsAny<string>()), Times.Never);
-        mockOutputPort.Verify(op => op.Ok(route), Times.Once);
     }
 
-    //Verificar se a rota já existe
     [Fact]
-    public async Task Execute_Should_Return_Error_When_Route_Already_Exists()
+    public async Task Execute_Should_Return_Error_When_Route_Is_Not_Found()
     {
         // Arrange
-        var route = new Route(
-            id: 0,
-            origem: "GRU",
-            destino: "BRC",
-            valor: 10.00
-        );
-
         var options = new DbContextOptionsBuilder<RouteDbContext>()
             .UseInMemoryDatabase($"TestDatabase_{Guid.NewGuid()}")
             .Options;
@@ -84,23 +62,17 @@ public class PostRouteUseCaseTests
             .Setup(repo => repo.GetAll())
             .ReturnsAsync(dbContext.Set<Route>().ToList());
 
-        var mockUnitOfWork = new Mock<IUnitOfWork>();
         var mockNotificationHelper = new Mock<NotificationHelper>();
-        var mockOutputPort = new Mock<IOutputPort<Route>>();
+        var mockOutputPort = new Mock<IOutputPortWithNotFound<string>>();
 
-        var useCase = new PostRouteUseCase(
-            mockUnitOfWork.Object,
-            mockRouteRepository.Object,
-            mockNotificationHelper.Object
-        );
-
+        var useCase = new GetBestRouteByOriginAndDestinyUseCase(mockRouteRepository.Object, mockNotificationHelper.Object);
         useCase.SetOutputPort(mockOutputPort.Object);
 
         // Act
-        await useCase.Execute(route);
+        await useCase.Execute("GRU", "XYZ");
 
         // Assert
-        mockNotificationHelper.Verify(nh => nh.Add(SystemConst.Error, MessageConst.RouteExist), Times.Once);
-        mockOutputPort.Verify(op => op.Error(), Times.Once);
+        mockNotificationHelper.Verify(nh => nh.Add(SystemConst.NotFound, MessageConst.RouteNotExist), Times.Once);
+        mockOutputPort.Verify(op => op.NotFound(), Times.Once);
     }
 }
