@@ -23,12 +23,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:60100/api/v1/rotas",
+							"raw": "https://localhost:61888/api/v1/rotas",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "60100",
+							"port": "61888",
 							"path": [
 								"api",
 								"v1",
@@ -56,12 +56,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:60100/api/v1/rotas/melhor/origem/GRU/destino/CDG",
+							"raw": "https://localhost:61888/api/v1/rotas/melhor/origem/GRU/destino/CDG",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "60100",
+							"port": "61888",
 							"path": [
 								"api",
 								"v1",
