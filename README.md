@@ -57,7 +57,7 @@ git clone https://github.com/henriqueandradesilva/contratabr.git
 1. Execute o CMD e Navegue para o Diretório do Projeto
 
 - Certifique-se de estar no diretório do projeto onde está o arquivo Routes.csproj. 
-Por exemplo, suponha que o projeto esteja em D:\routes\contratabr\src\Routes.
+Por exemplo, suponha que o projeto esteja em D:\contratabr\route\src\Routes.
 
 ```
 -- cmd
@@ -104,14 +104,14 @@ A API permite gerenciar rotas entre localidades, permitindo consultar a melhor r
 
 ## Base URL
 ```
-https://localhost:60100
+https://localhost:61888
 ```
 
 ---
 
 ### **Configuração e Execução**
 1. **Abra a solução no Visual Studio:**
-Localize e abra o arquivo ContrataBR Solution.sln.
+Localize e abra o arquivo Routes Solution.sln.
 2. **Defina o projeto docker-compose como o projeto de inicialização:** 
 Clique com o botão direito no projeto WebApi no Gerenciador de Soluções e selecione "Definir como Projeto de Inicialização".
 3. **Execute a aplicação:** 
