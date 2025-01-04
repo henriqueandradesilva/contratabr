@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "WebApi": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:61888;http://localhost:61889",
+      "launchUrl": "swagger/index.html"
+    }
+  }
+}
