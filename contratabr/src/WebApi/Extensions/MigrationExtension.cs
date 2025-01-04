@@ -10,12 +10,12 @@ public static class MigrationExtension
     public static void ApplyMigrations(
         this IApplicationBuilder app)
     {
-        using IServiceScope scope = app.ApplicationServices.CreateScope();
-
-        var context = scope.ServiceProvider.GetRequiredService<Infrastructure.DataAccess.RouteDbContext>();
-
         try
         {
+            using IServiceScope scope = app.ApplicationServices.CreateScope();
+
+            var context = scope.ServiceProvider.GetRequiredService<Infrastructure.DataAccess.RouteDbContext>();
+
             var connection =
                 context.Database.GetConnectionString();
 

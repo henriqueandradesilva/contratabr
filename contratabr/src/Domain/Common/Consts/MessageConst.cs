@@ -24,11 +24,9 @@ public class MessageConst
 
     public const string RouteCreated = "Rota cadastrada com sucesso.";
 
-    public const string RouteUpdated = "Rota modificada com sucesso.";
-
     public const string RouteNotExist = "Nenhuma Rota foi encontrada.";
 
-    public const string RouteExist = "Este Rota já existe.";
+    public const string RouteExist = "Esta Rota já existe.";
 
     #endregion
 }

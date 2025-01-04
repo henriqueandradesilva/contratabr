@@ -44,4 +44,14 @@ public class Route : BaseGenericEntity
         = new Validators.ValidatorRoute();
 
     #endregion
+
+    #region Extensions
+
+    public void AddValor(
+        double valor)
+    {
+        Valor = valor;
+    }
+
+    #endregion
 }

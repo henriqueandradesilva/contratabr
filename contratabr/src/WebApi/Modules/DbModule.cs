@@ -8,6 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.FeatureManagement;
 using Serilog.Extensions.Logging;
+using System;
+using System.IO;
 
 namespace WebApi.Modules;
 
@@ -46,13 +48,8 @@ public static class DbModule
         }
         else
         {
-            services.AddScoped<RouteFakeDbContext>(provider =>
-            {
-                var csvFilePath = "rotas.csv";
-                return new RouteFakeDbContext(csvFilePath);
-            });
-
-            services.AddScoped<IRouteRepository, RouteFakeRepository>();
+            services.AddScoped<IUnitOfWork, CsvUnitOfWork>();
+            services.AddScoped<IRouteRepository>(provider => new CsvRouteRepository(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "rotas.csv")));
         }
 
         return services;

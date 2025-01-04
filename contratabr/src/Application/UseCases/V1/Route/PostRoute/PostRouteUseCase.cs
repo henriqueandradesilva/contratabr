@@ -5,7 +5,7 @@ using CrossCutting.Helpers;
 using CrossCutting.Interfaces;
 using Domain.Common.Consts;
 using Domain.Repositories;
-using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace Application.UseCases.V1.Route.PostRoute;
 
@@ -34,9 +34,9 @@ public class PostRouteUseCase : IPostRouteUseCase
         var normalizedDestiny = route.Destino?.NormalizeString();
 
         var result =
-           await _repository?.Where(c => c.Origem.ToUpper().Trim().Contains(normalizedOrigin) &&
-                                         c.Destino.ToUpper().Trim().Contains(normalizedDestiny))
-                            ?.FirstOrDefaultAsync();
+            _repository?.Where(c => c.Origem.ToUpper().Trim().Contains(normalizedOrigin) &&
+                                    c.Destino.ToUpper().Trim().Contains(normalizedDestiny))
+                            ?.FirstOrDefault();
 
         if (result != null)
         {

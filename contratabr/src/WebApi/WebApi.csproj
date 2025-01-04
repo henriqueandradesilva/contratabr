@@ -24,13 +24,8 @@
 	  <None Remove="UseCases\**" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UseCases\V1\Route\DeleteRouteController.cs" />
-    <Compile Include="UseCases\V1\Route\GetRouteByIdController.cs" />
     <Compile Include="UseCases\V1\Route\GetBestRouteByOriginAndDestinyController.cs" />
-    <Compile Include="UseCases\V1\Route\GetListAllRouteController.cs" />
-    <Compile Include="UseCases\V1\Route\GetListSearchRouteController.cs" />
     <Compile Include="UseCases\V1\Route\PostRouteController.cs" />
-    <Compile Include="UseCases\V1\Route\PutRouteController.cs" />
   </ItemGroup>
   <ItemGroup>
     <!-- Microsoft -->
@@ -57,9 +52,15 @@
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
 	  </PackageReference>
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.8" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Application\Application.csproj" />
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="rotas.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

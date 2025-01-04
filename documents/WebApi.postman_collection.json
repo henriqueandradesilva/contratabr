@@ -23,8 +23,8 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:60100/api/v1/rotas",
-							"protocol": "http",
+							"raw": "https://localhost:60100/api/v1/rotas",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -33,37 +33,6 @@
 								"api",
 								"v1",
 								"rotas"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Alteração da Rota",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"origem\": \"SCL\",\r\n  \"destino\": \"BRC\",\r\n  \"valor\": 15.00\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:60100/api/v1/rotas/8",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "60100",
-							"path": [
-								"api",
-								"v1",
-								"rotas",
-								"8"
 							]
 						}
 					},
@@ -87,8 +56,8 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:60100/api/v1/rotas/melhor/GRU/CDG",
-							"protocol": "http",
+							"raw": "https://localhost:60100/api/v1/rotas/melhor/GRU/CDG",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -100,102 +69,6 @@
 								"melhor",
 								"GRU",
 								"CDG"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Obter Rota Por Id",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"listaRelacionamento\": [\r\n    {\r\n      \"item1\": \"userId\",\r\n      \"item2\": 2\r\n    }\r\n  ],\r\n  \"paginaAtual\": 1,\r\n  \"tamanhoPagina\": 10,\r\n  \"campoOrdenacao\": \"title\",\r\n  \"direcaoOrdenacao\": \"asc\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:60100/api/v1/rotas/8",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "60100",
-							"path": [
-								"api",
-								"v1",
-								"rotas",
-								"8"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Listagem de Rotas Por Origem/Destino",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{ \r\n  \"texto\":\"SCL\",\r\n  \"paginaAtual\": 1,\r\n  \"tamanhoPagina\": 10,\r\n  \"campoOrdenacao\": \"valor\",\r\n  \"direcaoOrdenacao\": \"asc\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:60100/api/v1/rotas/consultar",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "60100",
-							"path": [
-								"api",
-								"v1",
-								"rotas",
-								"consultar"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Remoção da Rota",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"listaRelacionamento\": [\r\n    {\r\n      \"item1\": \"userId\",\r\n      \"item2\": 2\r\n    }\r\n  ],\r\n  \"paginaAtual\": 1,\r\n  \"tamanhoPagina\": 10,\r\n  \"campoOrdenacao\": \"title\",\r\n  \"direcaoOrdenacao\": \"asc\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:60100/api/v1/rotas/8",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "60100",
-							"path": [
-								"api",
-								"v1",
-								"rotas",
-								"8"
 							]
 						}
 					},
