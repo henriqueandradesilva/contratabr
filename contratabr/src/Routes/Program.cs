@@ -31,7 +31,7 @@ class Program
             if (string.IsNullOrEmpty(input))
                 break;
 
-            var parts = input.Split('-');
+            var parts = input.ToUpper().Split('-');
 
             if (parts.Length != 2)
             {

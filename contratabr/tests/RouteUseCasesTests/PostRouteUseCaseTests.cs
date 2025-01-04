@@ -8,6 +8,7 @@ using Domain.Repositories;
 using Infrastructure.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Moq;
+using System.Linq.Expressions;
 using tests.Common;
 
 namespace tests.RouteUseCasesTests;
@@ -36,8 +37,9 @@ public class PostRouteUseCaseTests
 
         var mockRouteRepository = new Mock<IRouteRepository>();
         mockRouteRepository
-            .Setup(repo => repo.GetAll())
-            .ReturnsAsync(dbContext.Set<Route>().ToList());
+            .Setup(repo => repo.Where(It.IsAny<Expression<Func<Route, bool>>>()))
+            .Returns((Expression<Func<Route, bool>> predicate) =>
+                dbContext.Set<Route>().Where(predicate));
 
         var mockUnitOfWork = new Mock<IUnitOfWork>();
         var mockNotificationHelper = new Mock<NotificationHelper>();
@@ -81,8 +83,9 @@ public class PostRouteUseCaseTests
 
         var mockRouteRepository = new Mock<IRouteRepository>();
         mockRouteRepository
-            .Setup(repo => repo.GetAll())
-            .ReturnsAsync(dbContext.Set<Route>().ToList());
+            .Setup(repo => repo.Where(It.IsAny<Expression<Func<Route, bool>>>()))
+            .Returns((Expression<Func<Route, bool>> predicate) =>
+                dbContext.Set<Route>().Where(predicate));
 
         var mockUnitOfWork = new Mock<IUnitOfWork>();
         var mockNotificationHelper = new Mock<NotificationHelper>();

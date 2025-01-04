@@ -63,3 +63,10 @@ Duas interfaces de consulta devem ser implementadas:
   * Estrutura dos arquivos/pacotes
   * Explique as decisões de design adotadas para a solução
   * Descreva sua API Rest de forma simplificada
+
+
+Cmd
+routes.exe rotas.csv
+
+Windows PowerShell
+.\routes.exe rotas.csv
