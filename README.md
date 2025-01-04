@@ -3,8 +3,7 @@ Escolha a rota de viagem mais barata independente da quantidade de conexões. (O
 Para isso precisamos inserir as rotas através de um arquivo de entrada. (OK)
 
 ## Arquivo de entrada ##
-Formato: (OK)
-Origem,Destino,Valor
+Formato: Origem,Destino,Valor (OK)
 
 ```rotas.csv
 GRU,BRC,10
@@ -24,18 +23,22 @@ Uma viajem de **GRU** para **CDG** existem as seguintes rotas:
 3. GRU - CDG ao custo de $75
 4. GRU - SCL - ORL - CDG ao custo de $45
 
-O melhor preço é da rota **1**, apesar de mais conexões, seu valor final é menor. (OK)
-O resultado da consulta no programa deve ser: **GRU - BRC - SCL - ORL - CDG ao custo de $40**. (OK)
+- O melhor preço é da rota **1**, apesar de mais conexões, seu valor final é menor. (OK)
+- O resultado da consulta no programa deve ser: **GRU - BRC - SCL - ORL - CDG ao custo de $40**. (OK)
 
 ### Execução do programa ###
 A inicializacao do teste se dará por linha de comando onde o primeiro argumento é o arquivo de entrada. (OK)
 
 ```cmd
-$ executavel rotas.csv
+$ routes.exe rotas.csv
+```
+
+```Windows PowerShell
+$ .\routes.exe rotas.csv
 ```
 
 ### Projetos ###
-Duas interfaces de consulta devem ser implementadas: (OK)
+Duas interfaces de consulta devem ser implementadas:
 
 - Interface de console 
 	O console deverá receber um input com a rota no formato "DE-PARA" e imprimir a melhor rota e valor. (OK)
@@ -63,10 +66,3 @@ Duas interfaces de consulta devem ser implementadas: (OK)
   * Estrutura dos arquivos/pacotes
   * Explique as decisões de design adotadas para a solução
   * Descreva sua API Rest de forma simplificada
-
-
-Cmd
-routes.exe rotas.csv
-
-Windows PowerShell
-.\routes.exe rotas.csv
