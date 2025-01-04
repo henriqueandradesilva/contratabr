@@ -14,10 +14,17 @@ public static class MigrationExtension
 
         var context = scope.ServiceProvider.GetRequiredService<Infrastructure.DataAccess.RouteDbContext>();
 
-        var connection =
-            context.Database.GetConnectionString();
+        try
+        {
+            var connection =
+                context.Database.GetConnectionString();
 
-        if (context.Database.GetPendingMigrations().Any())
-            context.Database.Migrate();
+            if (context.Database.GetPendingMigrations().Any())
+                context.Database.Migrate();
+        }
+        catch
+        {
+
+        }
     }
 }
