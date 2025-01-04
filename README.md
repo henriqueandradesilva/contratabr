@@ -29,11 +29,13 @@ Uma viajem de **GRU** para **CDG** existem as seguintes rotas:
 ### Execução do programa ###
 A inicializacao do teste se dará por linha de comando onde o primeiro argumento é o arquivo de entrada. (OK)
 
-```cmd
+```
+REM cmd
 $ routes.exe rotas.csv
 ```
 
-```Windows PowerShell
+```
+REM Windows PowerShell
 $ .\routes.exe rotas.csv
 ```
 
