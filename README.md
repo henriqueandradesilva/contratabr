@@ -112,7 +112,7 @@ https://localhost:61888
 ### **Configuração e Execução**
 1. **Abra a solução no Visual Studio:**
 Localize e abra o arquivo Routes Solution.sln.
-2. **Defina o projeto docker-compose como o projeto de inicialização:** 
+2. **Defina o projeto WebApi como o projeto de inicialização:** 
 Clique com o botão direito no projeto WebApi no Gerenciador de Soluções e selecione "Definir como Projeto de Inicialização".
 3. **Execute a aplicação:** 
 Pressione F5 ou clique em "Iniciar" para executar a aplicação.
